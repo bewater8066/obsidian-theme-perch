@@ -646,7 +646,6 @@ code {
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link:hover,
 .cm-link:hover {
   text-decoration: underline;
-  text-decoration-thickness: 1px;
   color: var(--color-primary-link-hover);
 }
 /* External links stay blue: start = checkbox blue, deepen (not turn brown) on hover.
@@ -733,7 +732,6 @@ code {
 .markdown-rendered s,
 .cm-strikethrough {
   color: var(--color-text-muted);
-  text-decoration-thickness: 1px;
 }
 
 /* --- 3g. Blockquote —— left border + very light background + padding --- */
@@ -758,8 +756,10 @@ code {
 .markdown-source-view.mod-cm6 .cm-content > .HyperMD-quote:first-child {
   padding-top: 1em;
 }
-/* Last line of a quote group: not followed by another quote line */
-.markdown-source-view.mod-cm6 .HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)),
+/* Last line of a quote group: only when the quote ends the document.
+   (Avoided :has(+ .cm-line:not(.HyperMD-quote)) — broad selector invalidation
+   in the editor hurts performance; mid-document quotes lose bottom padding in
+   live preview, but reading view uses a real blockquote and is unaffected.) */
 .markdown-source-view.mod-cm6 .HyperMD-quote:last-child {
   padding-bottom: 1em;
 }
@@ -922,7 +922,6 @@ body.perch-focus-mode .markdown-source-view.mod-cm6 .cm-active.cm-line {
 .markdown-source-view.mod-cm6 .table-cell-wrapper .cm-editor .cm-content,
 .markdown-source-view.mod-cm6 .table-cell-wrapper .cm-editor .cm-line {
   padding: 0;
-  text-indent: 0;
 }
 .markdown-source-view.mod-cm6 .table-cell-wrapper .cm-editor .cm-scroller {
   padding: 0;

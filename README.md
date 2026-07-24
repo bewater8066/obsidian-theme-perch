@@ -1,6 +1,6 @@
 # Perch
 
-Perch | Eye-Friendly Obsidian Theme for Myopia Sufferers, A dual-mode Obsidian theme built for long-duration writing sessions:
+Perch | Eye-Friendly Obsidian Theme , A dual-mode Obsidian theme built for long-duration writing sessions:
 
 - **Dawn Perch (Light Mode)** – Warm cream paper tones with soft diffused daylight for a relaxed writing atmosphere.
 - **Dusk Perch (Dark Mode)** – Muted teal-charcoal background (not pure black), designed to wind down your late-night writing flow.
